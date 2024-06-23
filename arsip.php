@@ -28,10 +28,34 @@
     <div class="panel panel">
 
         <div class="panel-heading">
-            <h3 class="panel-title">Semua Arsip</h3>
+            <h3 class="panel-title">Data Arsip Saya</h3>
         </div>
         <div class="panel-body">
 
+
+            <div class="pull-right">
+                <a href="arsip_tambah.php" class="btn btn-primary"><i class="fa fa-cloud"></i> Upload Arsip</a>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <center>
+                <?php 
+                if(isset($_GET['alert'])){
+                    if($_GET['alert'] == "gagal"){
+                        ?>
+                        <div class="alert alert-danger">File arsip gagal diupload. krena demi keamanan file .php tidak diperbolehkan.</div>
+                        <?php
+                    }else{
+                        ?>
+                        <div class="alert alert-success">Arsip berhasil tersimpan.</div>
+                        <?php
+                    }
+                }
+                ?>
+            </center>
             <table id="table" class="table table-bordered table-striped table-hover table-datatable">
                 <thead>
                     <tr>
@@ -48,7 +72,8 @@
                     <?php 
                     include '../koneksi.php';
                     $no = 1;
-                    $arsip = mysqli_query($koneksi,"SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id ORDER BY arsip_id DESC");
+                    $saya = $_SESSION['id'];
+                    $arsip = mysqli_query($koneksi,"SELECT * FROM arsip,kategori,petugas WHERE arsip_petugas=petugas_id and arsip_kategori=kategori_id and arsip_petugas='$saya' ORDER BY arsip_id DESC");
                     while($p = mysqli_fetch_array($arsip)){
                         ?>
                         <tr>
@@ -92,6 +117,7 @@
                                 <div class="btn-group">
                                     <a target="_blank" class="btn btn-default" href="../arsip/<?php echo $p['arsip_file']; ?>"><i class="fa fa-download"></i></a>
                                     <a target="_blank" href="arsip_preview.php?id=<?php echo $p['arsip_id']; ?>" class="btn btn-default"><i class="fa fa-search"></i> Preview</a>
+                                    <a href="arsip_edit.php?id=<?php echo $p['arsip_id']; ?>" class="btn btn-default"><i class="fa fa-wrench"></i></a>
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal_<?php echo $p['arsip_id']; ?>">
                                         <i class="fa fa-trash"></i>
                                     </button>

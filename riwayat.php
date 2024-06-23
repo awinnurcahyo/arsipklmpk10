@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="breadcome-heading">
-                                <h4 style="margin-bottom: 0px">Data Riwayat</h4>
+                                <h4 style="margin-bottom: 0px">Data Riwayat Unduh Arsip Saya</h4>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -28,7 +28,7 @@
     <div class="panel panel">
 
         <div class="panel-heading">
-            <h3 class="panel-title">Data Riwayat Unduhan Arsip</h3>
+            <h3 class="panel-title">Data Riwayat Unduhan Arsip Saya</h3>
         </div>
         <div class="panel-body">
 
@@ -47,7 +47,7 @@
                     include '../koneksi.php';
                     $no = 1;
                     $saya = $_SESSION['id'];
-                    $arsip = mysqli_query($koneksi,"SELECT * FROM riwayat,arsip,user WHERE riwayat_arsip=arsip_id and riwayat_user=user_id ORDER BY riwayat_id DESC");
+                    $arsip = mysqli_query($koneksi,"SELECT * FROM riwayat,arsip,user WHERE riwayat_arsip=arsip_id and riwayat_user=user_id and arsip_petugas='$saya' ORDER BY riwayat_id DESC");
                     while($p = mysqli_fetch_array($arsip)){
                         ?>
                         <tr>
