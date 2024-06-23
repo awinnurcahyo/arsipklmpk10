@@ -2,5 +2,5 @@
 session_start();
 session_destroy();
 
-header("location:../login.php?alert=logout");
+header("location:../user_login.php?alert=logout");
 ?>

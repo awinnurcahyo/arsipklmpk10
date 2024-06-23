@@ -32,7 +32,7 @@
 
                 <?php 
                 $id = $_SESSION['id'];
-                $saya = mysqli_query($koneksi,"select * from petugas where petugas_id='$id'");
+                $saya = mysqli_query($koneksi,"select * from user where user_id='$id'");
                 $s = mysqli_fetch_assoc($saya);
                 ?>
                 <div class="single-cards-item">
@@ -45,19 +45,19 @@
 
                     <div class="single-product-text">
                         <?php 
-                        if($s['petugas_foto'] == ""){
+                        if($s['user_foto'] == ""){
                             ?>
                             <img class="img-user" src="../gambar/sistem/user.png">
                             <?php
                         }else{
                             ?>
-                            <img class="img-user" src="../gambar/petugas/<?php echo $s['petugas_foto']; ?>">
+                            <img class="img-user" src="../gambar/user/<?php echo $s['user_foto']; ?>">
                             <?php
                         }
                         ?>
 
-                        <h4><a class="cards-hd-dn" href="#"><?php echo $s['petugas_nama']; ?></a></h4>
-                        <h5>Petugas</h5>
+                        <h4><a class="cards-hd-dn" href="#"><?php echo $s['user_nama']; ?></a></h4>
+                        <h5>user</h5>
                         <p class="ctn-cards">Pengelolaan arsip jadi lebih mudah dengan sistem informasi arsip digital.</p>
                     </div>
                 </div>
@@ -84,12 +84,12 @@
                             
                             <div class="form-group">
                                 <label>Nama</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Nama .." name="nama" required="required" value="<?php echo $s['petugas_nama'] ?>">
+                                <input type="text" class="form-control" placeholder="Masukkan Nama .." name="nama" required="required" value="<?php echo $s['user_nama'] ?>">
                             </div>
 
                             <div class="form-group">
                                 <label>Username</label>
-                                <input type="text" class="form-control" placeholder="Masukkan Username .." name="username" required="required" value="<?php echo $s['petugas_username'] ?>">
+                                <input type="text" class="form-control" placeholder="Masukkan Username .." name="username" required="required" value="<?php echo $s['user_username'] ?>">
                             </div>
 
                             <div class="form-group">
