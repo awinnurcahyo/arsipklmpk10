@@ -1,183 +1,28 @@
-<?php include 'header.php'; ?>
+<?php include("head.inc"); ?>
 
-<div class="breadcome-area">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="breadcome-list">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="breadcome-heading">
-                                <h4 style="margin-bottom: 0px">Dashboard</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <ul class="breadcome-menu" style="padding-top: 0px">
-                                <li><a href="#">Home</a> <span class="bread-slash">/</span></li>
-                                <li><span class="bread-blod">Dashboard</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<a name="overview"> </a>
+<h2>Overview</h2>
 
-<div class="traffice-source-area mg-b-30">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="white-box analytics-info-cs">
-                    <h3 class="box-title">Petugas</h3>
-                    <ul class="list-inline two-part-sp">
-                        <li>
-                            <div id="sparklinedash"></div>
-                        </li>
-                        <li class="text-right sp-cn-r">
-                            <i class="fa fa-level-up" aria-hidden="true"></i> 
-                            <span class="counter text-success">
-                                <?php 
-                                $jumlah_petugas = mysqli_query($koneksi,"select * from petugas");
-                                ?>
-                                <span class="counter"><?php echo mysqli_num_rows($jumlah_petugas); ?></span>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="white-box analytics-info-cs res-mg-t-30 table-mg-t-pro-n">
-                    <h3 class="box-title">User / Pengguna</h3>
-                    <ul class="list-inline two-part-sp">
-                        <li>
-                            <div id="sparklinedash2"></div>
-                        </li>
-                        <li class="text-right graph-two-ctn">
-                            <i class="fa fa-level-up" aria-hidden="true"></i> 
-                            <span class="counter text-purple">
-                                <?php 
-                                $jumlah_user = mysqli_query($koneksi,"select * from user");
-                                ?>
-                                <span class="counter"><?php echo mysqli_num_rows($jumlah_user); ?></span>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="white-box analytics-info-cs res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
-                    <h3 class="box-title">Total Arsip</h3>
-                    <ul class="list-inline two-part-sp">
-                        <li>
-                            <div id="sparklinedash3"></div>
-                        </li>
-                        <li class="text-right graph-three-ctn">
-                            <i class="fa fa-level-up" aria-hidden="true"></i> 
-                            <span class="counter text-info">
-                                <?php 
-                                $jumlah_arsip = mysqli_query($koneksi,"select * from arsip");
-                                ?>
-                                <span class="counter"><?php echo mysqli_num_rows($jumlah_arsip); ?></span>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="white-box analytics-info-cs res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
-                    <h3 class="box-title">Kategori Arsip</h3>
-                    <ul class="list-inline two-part-sp">
-                        <li>
-                            <div id="sparklinedash4"></div>
-                        </li>
-                        <li class="text-right graph-four-ctn">
-                            <i class="fa fa-level-down" aria-hidden="true"></i> 
-                            <span class="text-danger">
-                                <?php 
-                                $jumlah_kategori = mysqli_query($koneksi,"select * from kategori");
-                                ?>
-                                <span class="counter"><?php echo mysqli_num_rows($jumlah_kategori); ?></span>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<p>dompdf is an HTML to PDF converter.  At its heart, dompdf is (mostly)
+CSS2.1 compliant HTML layout and rendering engine written in PHP.  It is
+a style-driven renderer: it will download and read external stylesheets,
+inline style tags, and the style attributes of individual HTML elements.  It
+also supports most presentational HTML attributes.</p>
 
+<p>PDF rendering is currently provided either by PDFLib (<a
+href="http://www.pdflib.com">www.pdflib.com</a>) or by a bundled
+version the R&amp;OS CPDF class written by Wayne Munro (<a
+href="http://www.ros.co.nz/pdf/">www.ros.co.nz/pdf</a>).  (Some
+performance related changes have been made to the R&amp;OS class,
+however).  In order to use PDFLib with dompdf, the PDFLib PECL
+extension is required.  Using PDFLib improves performance and reduces
+the memory requirements of dompdf somewhat, while the R&amp;OS CPDF class,
+though slightly slower, eliminates any dependencies on external PDF
+libraries.</p>
 
+<p>Please note that dompdf works only with PHP 5. There are no plans for
+a PHP 4 port. If your web host does not offer PHP 5, I suggest either pestering
+them, or setting up your own PHP 5 box and using it to run dompdf.  Your scripts
+on your web host can redirect PDF requests to your PHP 5 box.</p>
 
-<div class="product-sales-area mg-tb-30">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-                <div class="product-sales-chart">
-                    <div class="portlet-title">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="caption pro-sl-hd">
-                                    <span class="caption-subject"><b>Grafik pengunduhan arsip</b></span>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="actions graph-rp graph-rp-dl">
-                                    <p>Grafik jumlah unduh arsip perhari selama sebulan</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="list-inline cus-product-sl-rp">
-                        <li>
-                            <h5><i class="fa fa-circle" style="color: #006DF0;"></i>Jumlah Unduhan</h5>
-                        </li>
-                    </ul>
-                    <div id="extra-area-chart" style="height: 356px;"></div>
-
-
-                    <div id="morris-area-chart"></div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-
-                <?php 
-                $id = $_SESSION['id'];
-                $saya = mysqli_query($koneksi,"select * from admin where admin_id='$id'");
-                $s = mysqli_fetch_assoc($saya);
-                ?>
-                <div class="single-cards-item">
-                    <div class="single-product-image">
-                        <a href="#">
-
-                            <img src="../assets/img/product/profile-bg.jpg" alt="">
-                        </a>
-                    </div>
-
-                    <div class="single-product-text">
-                        <?php 
-                        if($s['admin_foto'] == ""){
-                            ?>
-                            <img class="img-user" src="../gambar/sistem/user.png">
-                            <?php
-                        }else{
-                            ?>
-                            <img class="img-user" src="../gambar/admin/<?php echo $s['admin_foto']; ?>">
-                            <?php
-                        }
-                        ?>
-
-                        <h4><a class="cards-hd-dn" href="#"><?php echo $s['admin_nama']; ?></a></h4>
-                        <h5>Admin</h5>
-                        <p class="ctn-cards">Pengelolaan arsip jadi lebih mudah dengan sistem informasi arsip digital.</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<?php include 'footer.php'; ?>
+<?php include("foot.inc"); ?>
