@@ -1,131 +1,148 @@
-<?php include 'header.php'; ?>
+    <!doctype html>
+    <html class="no-js" lang="en">
 
-<div class="breadcome-area">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="breadcome-list">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="breadcome-heading">
-                                <h4 style="margin-bottom: 0px">Dashboard</h4>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <ul class="breadcome-menu" style="padding-top: 0px">
-                                <li><a href="#">Home</a> <span class="bread-slash">/</span></li>
-                                <li><span class="bread-blod">Dashboard</span></li>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Dashboard V.2 | Kiaalap - Kiaalap Admin Template</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    </head>
+
+    <body>
+
+        <style type="text/css">
+
+            .navbar-siad{
+                background: #006df0;
+                border-radius: 0px;
+                border: 1px solid #006df0;
+                margin: 0px;
+                padding: 20px 0px;
+            }
+
+            .navbar-inverse .navbar-brand {
+
+                color: #fff;
+
+            }
+
+            .navbar-inverse .navbar-nav > li > a {
+
+                color: #fff;
+
+            }
+            .navbar-siad > li > a {
+
+                color: #9d9d9d !important;
+
+            }
+
+            .banner{
+                background: #006df0;
+                border-radius: 0px;
+                border: 1px solid #006df0;
+                padding: 60px 0px;
+            }
+
+            .banner{
+                color: white;
+            }
+
+            .banner a{
+                padding: 15px 25px;
+                color: white;
+                border: 1px solid white;
+                -webkit-transition: all 0.5s; 
+                transition: all 0.5s;
+                margin-right: 10px;
+            }
+
+            .banner a:hover{
+                text-decoration: none;
+                border: 1px dashed white;
+            }
+
+            .banner p{
+                font-size: 13pt;
+            }
+        </style>
+
+
+
+        <nav class="navbar navbar-inverse navbar-siad">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Arsip Digital</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <!-- <ul class="nav navbar-nav">
+                        <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
                             </ul>
-                        </div>
-                    </div>
+                        </li>
+                    </ul> -->
+
+                   
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+        </nav>
 
-<div class="product-sales-area mg-tb-30">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+
+        <div class="banner">
+            <div class="container">
 
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="white-box analytics-info-cs res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
-                            <h3 class="box-title">Total Arsip</h3>
-                            <ul class="list-inline two-part-sp">
-                                <li>
-                                    <div id="sparklinedash3"></div>
-                                </li>
-                                <li class="text-right graph-three-ctn">
-                                    <i class="fa fa-level-up" aria-hidden="true"></i> 
-                                    <span class="counter text-info">
-                                        <?php 
-                                        $jumlah_arsip = mysqli_query($koneksi,"select * from arsip");
-                                        ?>
-                                        <span class="counter"><?php echo mysqli_num_rows($jumlah_arsip); ?></span>
-                                    </span>
-                                </li>
-                            </ul>
+                    <div class="col-lg-6">
+                        <div style="margin-top: 140px;">
+                            <h1>Sistem Informasi Arsip Digital</h1>
+                            <p>Manajemen file arsip dengan mudah dan cepat.</p>
+
+                            <br>
+                            <br>
+
+                            <a href="user_login.php">LOGIN USER</a>
+                            <a href="login.php">LOGIN ADMIN / PETUGAS</a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div class="white-box analytics-info-cs res-mg-t-30 res-tablet-mg-t-30 dk-res-t-pro-30">
-                            <h3 class="box-title">Kategori Arsip</h3>
-                            <ul class="list-inline two-part-sp">
-                                <li>
-                                    <div id="sparklinedash4"></div>
-                                </li>
-                                <li class="text-right graph-four-ctn">
-                                    <i class="fa fa-level-down" aria-hidden="true"></i> 
-                                    <span class="text-danger">
-                                        <?php 
-                                        $jumlah_kategori = mysqli_query($koneksi,"select * from kategori");
-                                        ?>
-                                        <span class="counter"><?php echo mysqli_num_rows($jumlah_kategori); ?></span>
-                                    </span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                    <div class="col-lg-6">
 
-                <br>
-
-                <div class="product-sales-chart">
-
-                    <br>
-                    <br>
-                    <center>
+                        <img src="gambar/depan/2.png">
                         
-                        <h3>Selamat Datang</h3>
-                        <h4>Sistem Informasi Arsip Digital</h4>
-
-                    </center>
-                    <br>
-                    <br>
-                    <br>
-
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-
-                <?php 
-                $id = $_SESSION['id'];
-                $saya = mysqli_query($koneksi,"select * from user where user_id='$id'");
-                $s = mysqli_fetch_assoc($saya);
-                ?>
-                <div class="single-cards-item">
-                    <div class="single-product-image">
-                        <a href="#">
-                            <img src="../assets/img/product/profile-bg.jpg" alt="">
-                        </a>
-                    </div>
-
-                    <div class="single-product-text">
-                        <?php 
-                        if($s['user_foto'] == ""){
-                            ?>
-                            <img class="img-user" src="../gambar/sistem/user.png">
-                            <?php
-                        }else{
-                            ?>
-                            <img class="img-user" src="../gambar/user/<?php echo $s['user_foto']; ?>">
-                            <?php
-                        }
-                        ?>
-
-                        <h4><a class="cards-hd-dn" href="#"><?php echo $s['user_nama']; ?></a></h4>
-                        <h5>user</h5>
-                        <p class="ctn-cards">Pengelolaan arsip jadi lebih mudah dengan sistem informasi arsip digital.</p>
                     </div>
                 </div>
 
             </div>
         </div>
-    </div>
-</div>
 
 
-<?php include 'footer.php'; ?>
+
+
+
+        <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+    </body>
+
+    </html>
